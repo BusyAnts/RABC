@@ -2,6 +2,9 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>spring-security-oauth2-server</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -25,6 +28,10 @@
 
         <!-- Spring Settings -->
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+
+        <!-- Environment Settings -->
+        <hikaricp.version>3.3.1</hikaricp.version>
+        <mysql.version>5.1.47</mysql.version>
     </properties>
 
     <dependencyManagement>
@@ -38,6 +45,20 @@
                 <scope>import</scope>
             </dependency>
             <!-- Spring Cloud End -->
+
+            <!-- Environment Settings Begin -->
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>${hikaricp.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!-- Environment Settings End -->
         </dependencies>
     </dependencyManagement>
 </project>
