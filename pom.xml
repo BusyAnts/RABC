@@ -28,6 +28,7 @@
 
         <!-- Spring Settings -->
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+        <spring-boot-mapper.version>2.1.5</spring-boot-mapper.version>
 
         <!-- Environment Settings -->
         <hikaricp.version>3.3.1</hikaricp.version>
@@ -45,6 +46,14 @@
                 <scope>import</scope>
             </dependency>
             <!-- Spring Cloud End -->
+
+            <!-- Spring Boot Begin -->
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${spring-boot-mapper.version}</version>
+            </dependency>
+            <!-- Spring Boot End -->
 
             <!-- Environment Settings Begin -->
             <dependency>
