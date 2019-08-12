@@ -4,6 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>spring-security-oauth2-server</module>
+        <module>spring-security-oauth2-resource</module>
     </modules>
 
     <parent>
