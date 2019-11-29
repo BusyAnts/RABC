@@ -5,6 +5,7 @@
     <modules>
         <module>spring-security-oauth2-server</module>
         <module>spring-security-oauth2-resource</module>
+        <module>shiro-demo</module>
     </modules>
 
     <parent>
