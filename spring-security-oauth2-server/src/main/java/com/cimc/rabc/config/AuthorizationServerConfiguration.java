@@ -21,28 +21,24 @@ import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import javax.sql.DataSource;
 
 /**
-@Configuration
-@EnableAuthorizationServer
-public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
-
-    // 注入 WebSecurityConfiguration 中配置的 BCryptPasswordEncoder
-    @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
-
-    @Override
-    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients
-                .inMemory()
-                .withClient("client")
-                // 还需要为 secret 加密
-                .secret(passwordEncoder.encode("secret"))
-                .authorizedGrantTypes("authorization_code")
-                .scopes("app")
-                .redirectUris("http://www.baidu.com");
-
-    }
-}
-**/
+ * @Configuration
+ * @EnableAuthorizationServer public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
+ * <p>
+ * // 注入 WebSecurityConfiguration 中配置的 BCryptPasswordEncoder
+ * @Autowired private BCryptPasswordEncoder passwordEncoder;
+ * @Override public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+ * clients
+ * .inMemory()
+ * .withClient("client")
+ * // 还需要为 secret 加密
+ * .secret(passwordEncoder.encode("secret"))
+ * .authorizedGrantTypes("authorization_code")
+ * .scopes("app")
+ * .redirectUris("http://www.baidu.com");
+ * <p>
+ * }
+ * }
+ **/
 
 /**
  * 基于JDBC
