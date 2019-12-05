@@ -6,7 +6,7 @@ create table users
 (
     id            bigint auto_increment,
     username      varchar(100),
-    password      varchar(100),
+    password      varchar(1024),
     password_salt varchar(100),
     constraint pk_users primary key (id)
 ) charset = utf8
@@ -35,3 +35,4 @@ create unique index idx_roles_permissions on roles_permissions (role_name, permi
 
 insert into users(username, password)
 values ('zhang', '123');
+
